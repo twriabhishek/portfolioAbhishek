@@ -22,7 +22,7 @@ const projects = [
     githubUrl: "https://github.com",
   },
   {
-    title: "Bloging Application",
+    title: "Blogging Application",
     description:
       "I have built a complete server-side rendered application using Node.js, Express, and EJS. I have implemented various functionalities such as register, login, comment, like, add blog, update blog, delete blog, etc.",
     technologies: ["NodeJs", "Express", "Bootstrap", "EJS"],
