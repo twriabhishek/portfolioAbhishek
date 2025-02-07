@@ -80,7 +80,7 @@ export function HeroSection() {
           >
             <div className="relative aspect-square w-full max-w-lg rounded-full border-2">
               <img
-                src="/images/HeroSectionImage.jpeg"
+                src="/images/HeroImage1.jpeg"
                 alt="John Doe"
                 className="rounded-full object-cover w-full h-full"
               />
