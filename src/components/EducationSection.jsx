@@ -36,7 +36,7 @@ export function EducationSection() {
         >
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Education</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            My academic background and qualifications
+            My Academic background and qualifications
           </p>
         </motion.div>
         <div className="mt-16 grid gap-8">

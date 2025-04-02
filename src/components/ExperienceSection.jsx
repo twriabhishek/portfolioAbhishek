@@ -4,13 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 const experiences = [
   {
-    title: "Software Engineer",
+    title: "Full Stack Developer(MERN)",
     company: "Exato.AI",
     period: "June 2023 - Present",
     description: [
-      "Developed and maintained robust, well-tested code for diverse projects, utilizing HTML, CSS, JavaScript, React, and Bootstrap for frontend development.",
-      "Collaborated with team members to identify and resolve bugs while creating APIs and managing backend tasks using Node.js, MySQL and MongodB",
-      "Proficient in Structured Query Language (SQL) with hands-on experience in database management and optimization.",
+      "Engineered and optimized React.js components to enhance performance efficiency and reduce page load speed. Implemented techniques like lazy loading, memoization, and code splitting to streamline rendering. These optimizations significantly improved user experience and application responsiveness.",
+      "Architected and optimized REST API integrations using Node.js and Express.js to improve system efficiency and scalability. Designed robust endpoints, implemented middleware for security and logging, and optimized database interactions. These enhancements streamlined data flow, reduced latency, and ensured seamless client-server communication.",
+      "Developed and implemented Redux for efficient state management, optimizing data flow and minimizing unnecessary re-renders. Structured the Redux store with scalable reducers and middleware to enhance performance. These improvements resulted in a more responsive and maintainable application.",
+      "Enhanced MySQL and MongoDB query performance by optimizing indexes, query structures, and caching strategies. Reduced response times through efficient data modeling and query optimization techniques. These improvements significantly boosted database efficiency and application responsiveness."
     ],
   },
   {
@@ -18,9 +19,9 @@ const experiences = [
     company: "SRDT PRIVATE LIMITED",
     period: "October 2022 - May 2023",
     description: [
-      "Envolved in Design, Development, Unit testing, Enhancement of ERP solution and also creating Reports as per business requirement of client in Bi publisher.",
-      "Wrote queries to extract precise data from the Oracle Database So that I have a Good knowledge of Oracle sql, Key concept of DDL command, DML command, DQL command and DBMS.",
-      "I have also worked on live project.",
+      "Designed and developed ERP solutions using SQL and BI Publisher to streamline automation processes and enhance data reporting. Optimized database queries and report generation for improved efficiency and accuracy. These enhancements reduced manual workload and improved overall business operations.",
+      "Engineered optimized SQL queries and indexing strategies to enhance database performance and query execution speed. Improved data retrieval efficiency for large datasets, significantly reducing latency. These optimizations boosted system scalability and ensured seamless data processing.",
+      "Architected workflow enhancements for live projects by optimizing SQL processes and streamlining data operations. Improved query efficiency and database performance, reducing response times. These optimizations enhanced system reliability and improved overall customer experience.",
     ],
   },
   {
@@ -28,9 +29,9 @@ const experiences = [
     company: "SOFTPRO INDIA PVT. LTD.",
     period: "July 2019 - – August 2019",
     description: [
-      "Researched software solutions, tools and languages and applied informed results in selecting and using utilities to support product development.",
-      "Worked with technologies like HTML, CSS, JavaScript, React.js, Node.js, MySQL, and MongoDB.During the SummerInternship I worked on backend using server-side scripting language PHP which was quite challenging. I got to learn a lot during the internship.",
-      "Offered training to end-users on new or updated technologies and created reference materials and guidelines for everyday operations and troubleshooting tasks.",
+      "Researched and integrated new software tools and frameworks to enhance development efficiency and scalability. Evaluated emerging technologies to optimize workflows and streamline system architecture. These integrations improved performance, reduced technical debt, and accelerated project delivery.",
+      "Developed secure backend solutions using PHP and MySQL, implementing best practices for data protection and performance optimization. Optimized database queries and indexing strategies to enhance efficiency and reduce latency. These improvements strengthened system security, scalability, and overall reliability.",
+      "Collaborated with the team to debug and enhance existing applications, identifying and resolving critical issues. Optimized code performance and implemented improvements to ensure smooth functionality. These efforts enhanced application stability, user experience, and overall system reliability.",
     ],
   },
 ];

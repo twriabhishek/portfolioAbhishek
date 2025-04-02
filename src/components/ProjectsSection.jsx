@@ -16,15 +16,15 @@ const projects = [
   {
     title: "JAMMU AND KASHMIR BANK",
     description:
-      "Led the development of dynamic, fully functional pages and designed an efficient approval process, streamlining workflows to align with business objectives. Additionally, optimized database design and queries, ensuring seamless integration and enhanced project efficiency.",
+      "Designed and implemented an automated approval workflow, streamlining processes and significantly reducing manual effort. Optimized complex SQL queries and refactored redundant database operations, accelerating data retrieval and boosting system performance. Enhanced security by implementing role-based access control with granular permission levels, ensuring secure and efficient access management.",
     technologies: ["Oracle sql", "ERP", "Fluid Pages"],
     image: "/images/jkBank.png",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/twriabhishek",
   },
   {
     title: "Blogging Application",
     description:
-      "I have built a complete server-side rendered application using Node.js, Express, and EJS. I have implemented various functionalities such as register, login, comment, like, add blog, update blog, delete blog, etc.",
+      "Implemented secure user authentication with email verification and OTP-based login, strengthening access control. Developed a dynamic content management system with validation, role-based access, interactive comments, and likes to enhance user engagement. Optimized server-side rendering with EJS, significantly improving page load speed, SEO, and overall performance efficiency.",
     technologies: ["NodeJs", "Express", "Bootstrap", "EJS"],
     image: "/images/BlogingApp.png",
     githubUrl:
