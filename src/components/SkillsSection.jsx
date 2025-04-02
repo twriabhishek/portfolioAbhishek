@@ -5,20 +5,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 
 const skillCategories = [
   {
+    name: "Programming Languages",
+    skills: ["JavaScript", "TypeScript", "Java (Novice)", "Python (Novice)"],
+  },
+  {
     name: "Frontend",
-    skills: ["HTML5", "CSS", "JavaScript", "React.js", "Bootstrap"],
+    skills: ["HTML5", "CSS", "JavaScript", "React.js", "Bootstrap", "Redux"],
   },
   {
-    name: "Backend",
-    skills: ["Node.js", "Express.js", "RESTful APIs"],
+    name: "Backend & Databases",
+    skills: ["Node.js", "Express.js", "RESTful APIs", "Nest.js", "SQL", "MongoDB", "Oracle SQL","Microservices", "GRPC"],
   },
   {
-    name: "Databases",
-    skills: ["MongoDB", "MySQL","Oracle SQL"],
+    name: "Tools & Technologies",
+    skills: ["Git", "Postman", " Agile Development", "AWS", "Agile Methodology", "AI"],
   },
   {
     name: "Other Core Knowledge",
-    skills: ["Git", "AWS", "SDLC", "Data Structures", "Algorithms", "Postman", "AI Tools"],
+    skills: ["Data Structures & Algorithms", "OOP", "Design Patterns", "Problem Solving", "Software Development Life Cycle (SDLC)", "Agile Methodology"],
   },
 ]
 

@@ -47,6 +47,24 @@ const projects = [
     githubUrl:
       "https://github.com/twriabhishek/nodeJSComplete/tree/master/23_websocket",
   },
+  {
+    title: "Weather Dashboard",
+    description:
+      "A modern, interactive weather dashboard built with Next.js that provides real-time weather information for any city worldwide. The application features a beautiful, dynamic UI that changes based on current weather conditions. Users can search for any city, and the dashboard will display the current weather, and additional details such as humidity and wind speed. The app is fully responsive and works seamlessly on both desktop and mobile devices.",
+    technologies: ["Next js", "TypeScript", "Tailwind CSS", "OpenWeatherMap API", "Framer Motion"],
+    image: "/images/weather.png",
+    githubUrl:
+      "https://github.com/twriabhishek/Weather-Dashboard",
+  },
+  {
+    title: "Enterprise Resource Planning(ERP) Implementation of Exato",
+    description:
+      "Developed user management, attendance, leave, and expense tracking modules with a dynamic approval system, role-based permissions, real-time employee location tracking via Google Maps API, and automated financial report generation with data validation, improving workflow efficiency and accuracy.",
+    technologies: ["React.js", "Redux", "Google Maps API", "Bootstrap"],
+    image: "/images/exatoErp.png",
+    githubUrl:
+      "https://github.com/twriabhishek/Exato_ERP_Complete/tree/main/Exato_ERP_Client",
+  }
 ];
 
 export function ProjectsSection() {
