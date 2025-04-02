@@ -16,7 +16,7 @@
 ## **Technologies Used**  
 - **Next JS** (Semantic structure)  
 - **Tailwind CSS** (Flexbox, Grid, Animations)  
-- **TypeScript** (Basic interactivity)  
+- **JavaScript** (Basic interactivity)  
 - **Framer Motion** (Animation)  
 - **react-toastify** (Notify) 
 
