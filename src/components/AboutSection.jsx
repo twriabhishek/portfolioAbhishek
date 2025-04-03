@@ -18,8 +18,8 @@ export function AboutSection() {
             About Me
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            I am a dedicated software engineer with a strong foundation in
-            computer science and a passion for creating scalable and efficient
+            I am a dedicated Software Engineer with a strong foundation in
+            Computer Science and a passion for creating scalable and efficient
             web applications. My journey into software development began with a
             fascination for solving problems, driving me to master both frontend
             and backend technologies.

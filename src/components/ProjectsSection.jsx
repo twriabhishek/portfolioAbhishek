@@ -63,7 +63,16 @@ const projects = [
     technologies: ["React.js", "Redux", "Google Maps API", "Bootstrap"],
     image: "/images/exatoErp.png",
     githubUrl:
-      "https://github.com/twriabhishek/Exato_ERP_Complete/tree/main/Exato_ERP_Client",
+      "https://github.com/twriabhishek/Exato_ERP_Complete",
+  },
+  {
+    title: "AI Text Summarizer",
+    description:
+      "AI Text Summarizer is a web-based application that leverages Next.js, Tailwind CSS, and OpenAI GPT to generate concise summaries of input text. Users can enter text, upload files, and customize summary lengths to get AI-generated summaries in multiple languages. The app features a user-friendly interface, responsive design, and real-time feedback. It is built with Next.js for server-side rendering and optimized performance, while Tailwind CSS ensures a modern and visually appealing layout.",
+    technologies: ["Next.js", "Tailwind CSS", "OpenAI GPT"],
+    image: "/images/textSummarize.png",
+    githubUrl:
+      "https://github.com/twriabhishek/text-Summrizer",
   }
 ];
 

@@ -23,13 +23,12 @@ export function HeroSection() {
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
               Hi, I'm <span className="text-primary">ABHISHEK</span>
             </h1>
-            <p className="mt-4 text-xl text-muted-foreground">
-              Software Developer
-            </p>
+            <p className="mt-4 text-xl font-bold">SOFTWARE ENGINEER</p>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Ambitious problem-solver and tech enthusiast driving innovation in
-              web development. Passionate about creating efficient, scalable,
-              and user-friendly applications.
+              Tech and AI enthusiast passionate about innovation in web
+              development. Driven problem-solver focused on building scalable
+              and efficient solutions. Committed to creating user-friendly
+              applications that make a real impact.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
