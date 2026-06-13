@@ -1,90 +1,117 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import { TypewriterText } from "./TypewriterText";
 import { GithubIcon, LinkedinIcon, MailIcon, FileText } from "lucide-react";
+const highlights = [
+  { value: "3.5+", label: "Years Experience" },
+  { value: "MERN", label: "Stack Focus" },
+  { value: "Noida, IN", label: "Location" },
+];
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-4 py-16 sm:px-6 lg:px-8 lg:py-16">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 opacity-20 blur-[100px]" />
-      </div>
-
-      <div className="mx-auto max-w-7xl">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-8">
+    <section className="section-padding relative overflow-hidden">
+      <div className="section-container">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-2xl"
+            transition={{ duration: 0.4 }}
           >
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-              Hi, I'm <span className="text-primary">ABHISHEK</span>
-            </h1>
-            <p className="mt-4 text-xl font-bold">SOFTWARE ENGINEER</p>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Tech and AI enthusiast passionate about innovation in web
-              development. Driven problem-solver focused on building scalable
-              and efficient solutions. Committed to creating user-friendly
-              applications that make a real impact.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="https://drive.google.com/file/d/1AqpdTkznS3HKKP3a4KphyeS-ObHVMzIJ/view"
-                target="_blank"
-              >
-                <Button as="a">
-                  <FileText className="mr-2 h-4 w-4" />
-                  Download Resume
-                </Button>
-              </a>
-              <a href="#contact">
-                <Button variant="outline">
-                  <MailIcon className="mr-2 h-4 w-4" />
-                  Contact Me
-                </Button>
-              </a>
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-sm shadow-soft">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              <span className="text-muted-foreground">Open to new opportunities</span>
             </div>
-            <div className="mt-8 flex gap-4">
-              <a href="https://github.com/twriabhishek" target="_blank">
-                <Button variant="ghost" size="icon" as="a">
-                  <GithubIcon className="h-5 w-5" />
-                  <span className="sr-only">GitHub</span>
-                </Button>
+
+            <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
+              Hi, I&apos;m{" "}
+              <span className="inline-block min-w-[9.5ch] text-accent">
+                <TypewriterText text="Abhishek" charDelay={130} />
+              </span>
+            </h1>
+            <p className="mt-3 text-xl font-semibold text-foreground sm:text-2xl">
+              Software Engineer
+            </p>
+
+            <p className="mt-6 max-w-xl text-lg prose-muted">
+              MERN stack developer with 3+ years of experience designing and developing CPaaS platforms, IVR automation systems, event-driven microservices, and modern web applications. Experienced across the full stack, from React and Next.js frontends to NestJS, Kafka, Redis, and Asterisk-powered backend systems.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button asChild>
+                <a
+                  href="https://drive.google.com/file/d/1Ga8HmGqzd7U0clG9XSKU1fl0hGBusbM2/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FileText />
+                  Download Resume
+                </a>
+              </Button>
+              <Button variant="outline" asChild>
+                <a href="#contact">
+                  <MailIcon />
+                  Contact Me
+                </a>
+              </Button>
+            </div>
+
+            <div className="mt-8 flex items-center gap-3">
+              <a
+                href="https://github.com/twriabhishek"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-muted-foreground transition-colors hover:border-accent/30 hover:text-foreground"
+                aria-label="GitHub"
+              >
+                <GithubIcon className="h-5 w-5" />
               </a>
               <a
                 href="https://www.linkedin.com/in/abhishek-tiwari-7232171b3/"
                 target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-muted-foreground transition-colors hover:border-accent/30 hover:text-foreground"
+                aria-label="LinkedIn"
               >
-                <Button variant="ghost" size="icon" as="a">
-                  <LinkedinIcon className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </Button>
+                <LinkedinIcon className="h-5 w-5" />
               </a>
-              <a href="mailto:abhishek130199@gmail.com">
-                <Button variant="ghost" size="icon">
-                  <MailIcon className="h-5 w-5" />
-                  <span className="sr-only">Email</span>
-                </Button>
+              <a
+                href="mailto:abhishek130199@gmail.com"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-muted-foreground transition-colors hover:border-accent/30 hover:text-foreground"
+                aria-label="Email"
+              >
+                <MailIcon className="h-5 w-5" />
               </a>
             </div>
+
+            <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-border pt-8">
+              {highlights.map((item) => (
+                <div key={item.label}>
+                  <dt className="text-lg font-semibold text-foreground sm:text-xl">
+                    {item.value}
+                  </dt>
+                  <dd className="mt-1 text-sm text-muted-foreground">{item.label}</dd>
+                </div>
+              ))}
+            </dl>
           </motion.div>
+
           <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative mx-auto lg:mx-0"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="relative mx-auto w-full max-w-md lg:max-w-none"
           >
-            <div className="relative aspect-square w-full max-w-lg rounded-full border-2">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-muted shadow-elevated">
               <img
                 src="/images/HeroImage1.jpeg"
-                alt="John Doe"
-                className="rounded-full object-cover w-full h-full"
+                alt="Abhishek Tiwari"
+                className="h-full w-full object-cover"
               />
             </div>
-            <div className="absolute inset-0 -z-10 bg-primary/20 blur-3xl" />
           </motion.div>
         </div>
       </div>

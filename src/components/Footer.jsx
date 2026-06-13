@@ -1,47 +1,56 @@
-import React from 'react'
-import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
+import React from "react";
+import { GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
+
+const socialLinks = [
+  {
+    href: "https://github.com/twriabhishek",
+    label: "GitHub",
+    icon: GithubIcon,
+  },
+  {
+    href: "https://www.linkedin.com/in/abhishek-tiwari-7232171b3/",
+    label: "LinkedIn",
+    icon: LinkedinIcon,
+  },
+  {
+    href: "mailto:abhishek130199@gmail.com",
+    label: "Email",
+    icon: MailIcon,
+  },
+];
 
 export function Footer() {
   return (
-    <footer className="border-t">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <footer className="border-t border-border bg-background">
+      <div className="section-container py-10">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+          <div className="text-center sm:text-left">
+            <p className="font-semibold text-foreground">Abhishek Tiwari</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Software Engineer · Product Development · MERN Stack
+            </p>
+          </div>
+
+          <div className="flex items-center gap-3">
+            {socialLinks.map(({ href, label, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-muted-foreground transition-colors hover:border-accent/30 hover:text-foreground"
+                aria-label={label}
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
+
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Abhishek. All rights reserved.
-          </p>
-          <div className="flex gap-4">
-            <a
-              href="https://github.com/twriabhishek"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <GithubIcon className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/abhishek-tiwari-7232171b3/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <LinkedinIcon className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
-            </a>
-            <a
-              href="mailto:abhishek130199@gmail.com"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <MailIcon className="h-5 w-5" />
-              <span className="sr-only">Email</span>
-            </a>
-          </div>
-          <p className="text-sm text-muted-foreground">
-            Made with ❤️ by Abhishek
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

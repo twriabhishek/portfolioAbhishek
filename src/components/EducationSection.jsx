@@ -1,67 +1,74 @@
-import React from 'react'
-import { motion } from "framer-motion"
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
+import React from "react";
+import { motion } from "framer-motion";
+import { GraduationCap } from "lucide-react";
+import { SectionHeader } from "./SectionHeader";
 
 const educations = [
   {
     degree: "Bachelor of Technology in Computer Science",
     institution: "DR. RMLAU UNIVERSITY AYODHYA",
-    period: "2018 - 2022",
-    description: "Gained a strong foundation in core computer science subjects and practical experience in software development, web technologies, and database management."
+    period: "2018 — 2022",
+    description:
+      "Gained a strong foundation in core computer science subjects and practical experience in software development, web technologies, and database management.",
   },
   {
     degree: "Intermediate in Physics, Chemistry and Mathematics",
     institution: "MRLB INTER COLLEGE",
-    period: "2015 - 2017",
-    description: "Developed a strong analytical and problem-solving foundation, excelling in mathematics and science subjects."
+    period: "2015 — 2017",
+    description:
+      "Developed a strong analytical and problem-solving foundation, excelling in mathematics and science subjects.",
   },
   {
-    degree: "HighSchool in Mathematics",
+    degree: "High School in Mathematics",
     institution: "MRLB INTER COLLEGE",
-    period: "2014 - 2015",
-    description: "Built a solid foundation in mathematics and science, fostering critical thinking and a passion for problem-solving."
-  }
-]
+    period: "2014 — 2015",
+    description:
+      "Built a solid foundation in mathematics and science, fostering critical thinking and a passion for problem-solving.",
+  },
+];
 
 export function EducationSection() {
   return (
-    <section id="education" className="bg-muted/50 px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <section id="education" className="section-padding section-alt">
+      <div className="section-container">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Education</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            My Academic background and qualifications
-          </p>
+          <SectionHeader
+            label="Education"
+            title="Academic Background"
+            description="My academic background and qualifications"
+          />
         </motion.div>
-        <div className="mt-16 grid gap-8">
+
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {educations.map((edu, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
+            <motion.article
+              key={edu.degree}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
+              className="card-elevated flex h-full flex-col p-6"
             >
-              <Card>
-                <CardHeader>
-                  <CardTitle>{edu.degree}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold">{edu.institution}</p>
-                  <p className="text-sm text-muted-foreground">{edu.period}</p>
-                  <p className="mt-2">{edu.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                <GraduationCap className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold leading-snug text-foreground">
+                {edu.degree}
+              </h3>
+              <p className="mt-2 font-medium text-accent">{edu.institution}</p>
+              <time className="mt-1 text-sm text-muted-foreground">{edu.period}</time>
+              <p className="mt-4 flex-1 text-sm leading-relaxed prose-muted">
+                {edu.description}
+              </p>
+            </motion.article>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,24 +10,24 @@ html {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
+    --popover-foreground: 222 47% 11%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 214 32% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 217 91% 60%;
+    --radius: 0.625rem;
   }
 }
 
@@ -33,7 +35,87 @@ html {
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-foreground;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-24;
+  }
+
+  .section-alt {
+    @apply border-y border-border/60 bg-muted/40;
+  }
+
+  .prose-muted {
+    @apply text-muted-foreground leading-relaxed;
+  }
+
+  .card-elevated {
+    @apply rounded-xl border border-border/80 bg-card shadow-sm transition-shadow duration-200 hover:shadow-md;
+  }
+
+  .link-accent {
+    @apply text-accent hover:text-accent/80 transition-colors;
+  }
+
+  .typed-dot {
+    @apply h-2.5 w-2.5 rounded-full bg-accent;
+    animation: typed-dot-blink 1s step-end infinite;
+    transform: translateY(0.08em);
+  }
+
+  .animate-float-orb {
+    animation: float-orb ease-in-out infinite;
+  }
+
+  .animated-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.35) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.35) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    mask-image: radial-gradient(ellipse at 50% 0%, black 10%, transparent 70%);
+  }
+}
+
+@keyframes typed-dot-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes float-orb {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(2.5rem, -1.5rem) scale(1.05);
+  }
+  66% {
+    transform: translate(-1.5rem, 2rem) scale(0.95);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-orb {
+    animation: none;
   }
 }

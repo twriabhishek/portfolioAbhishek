@@ -3,28 +3,41 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
-import { MailIcon, PhoneIcon, MapPinIcon } from "lucide-react";
-import { toast } from 'react-toastify';
+import { MailIcon, PhoneIcon, MapPinIcon, Send } from "lucide-react";
+import { toast } from "react-toastify";
+import { SectionHeader } from "./SectionHeader";
+
+const contactDetails = [
+  {
+    icon: MailIcon,
+    label: "Email",
+    value: "abhishek130199@gmail.com",
+    href: "mailto:abhishek130199@gmail.com",
+  },
+  {
+    icon: PhoneIcon,
+    label: "Phone",
+    value: "+91 9506937439",
+    href: "tel:+919506937439",
+  },
+  {
+    icon: MapPinIcon,
+    label: "Location",
+    value: "Noida, UP",
+  },
+];
 
 export function ContactSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate a delay of 1.5 seconds
     setTimeout(() => {
-      console.log("Toast will appear now");
       toast.success("Message sent successfully!");
       setName("");
       setEmail("");
@@ -34,79 +47,120 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <section id="contact" className="section-padding section-alt">
+      <div className="section-container">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Contact Me
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Get in touch for opportunities or just to say hi!
-          </p>
+          <SectionHeader
+            label="Contact"
+            title="Get In Touch"
+            description="Open to full-time roles, freelance projects, and technical collaborations"
+          />
         </motion.div>
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
-          <Card>
-            <CardHeader>
-              <CardTitle>Contact Information</CardTitle>
-              <CardDescription>
-                Feel free to reach out through any of these channels
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-4">
-              <div className="flex items-center">
-                <MailIcon className="mr-2 h-4 w-4" />
-                <span>abhishek130199@gmail.com</span>
-              </div>
-              <div className="flex items-center">
-                <PhoneIcon className="mr-2 h-4 w-4" />
-                <span>+91 9506937439</span>
-              </div>
-              <div className="flex items-center">
-                <MapPinIcon className="mr-2 h-4 w-4" />
-                <span>Noida, UP</span>
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Send a Message</CardTitle>
-              <CardDescription>
-                I'll get back to you as soon as possible
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="grid gap-4">
-                <Input
-                  placeholder="Your Name"
-                  required
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-                <Input
-                  type="email"
-                  placeholder="Your Email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
+
+        <div className="mt-14 grid gap-8 lg:grid-cols-5">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
+            viewport={{ once: true }}
+            className="lg:col-span-2"
+          >
+            <div className="card-elevated h-full p-6 sm:p-8">
+              <h3 className="text-lg font-semibold text-foreground">
+                Contact Information
+              </h3>
+              <p className="mt-2 text-sm prose-muted">
+                Feel free to reach out through any of these channels.
+              </p>
+
+              <ul className="mt-8 space-y-5">
+                {contactDetails.map((item) => (
+                  <li key={item.label} className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                      <item.icon className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-muted-foreground">
+                        {item.label}
+                      </p>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="mt-0.5 block font-medium text-foreground link-accent"
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="mt-0.5 font-medium text-foreground">
+                          {item.value}
+                        </p>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="lg:col-span-3"
+          >
+            <div className="card-elevated p-6 sm:p-8">
+              <h3 className="text-lg font-semibold text-foreground">
+                Send a Message
+              </h3>
+              <p className="mt-2 text-sm prose-muted">
+                Share a brief about your opportunity or project — I'll get back
+                to you as soon as possible.
+              </p>
+
+              <form onSubmit={handleSubmit} className="mt-8 space-y-4">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Input
+                    placeholder="Your Name"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="h-11"
+                  />
+                  <Input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="h-11"
+                  />
+                </div>
                 <Textarea
                   placeholder="Your Message"
                   required
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
+                  className="min-h-[140px] resize-y"
                 />
-                <Button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto">
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      <Send />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
-            </CardContent>
-          </Card>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
