@@ -7,12 +7,28 @@ import { SectionHeader } from "./SectionHeader";
 
 const projects = [
   {
+    title: "Cloud Telephony & IVR Automation Platform",
+    description:
+      "A cloud telephony platform designed for IVR automation, outbound campaigns, call routing, voicemail management, and real-time call monitoring. Built using Asterisk ARI, NestJS, Kafka, and Redis, the platform enables dynamic call-flow execution, Text-to-Speech (TTS) integration, call recording, and event-driven analytics. It also includes a visual IVR Flow Builder that allows users to design and manage call workflows without coding.",
+    technologies: [
+      "Asterisk ARI",
+      "NestJS",
+      "TypeScript",
+      "Kafka",
+      "Redis",
+      "MongoDB",
+      "gRPC",
+      "React.js",
+      "Next.js"
+    ],
+    image: "/images/cloud-telephony.png",
+  },
+  {
     title: "JAMMU AND KASHMIR BANK",
     description:
       "Designed and implemented an automated approval workflow, streamlining processes and significantly reducing manual effort. Optimized complex SQL queries and refactored redundant database operations, accelerating data retrieval and boosting system performance. Enhanced security by implementing role-based access control with granular permission levels, ensuring secure and efficient access management.",
     technologies: ["Oracle sql", "ERP", "Fluid Pages"],
     image: "/images/jkBank.png",
-    githubUrl: "https://github.com/twriabhishek",
   },
   {
     title: "Blogging Application",
